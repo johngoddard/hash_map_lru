@@ -10,6 +10,10 @@ class HashMap
     @count = 0
   end
 
+  def size
+    num_buckets
+  end
+
   def include?(key)
     bucket(key).include?(key)
   end
@@ -33,7 +37,7 @@ class HashMap
 
   def each
     @store.each do |linked_list|
-      linked_list.each
+      linked_list.each { |link| yield([link.key, link.val]) }
     end
   end
 

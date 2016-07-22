@@ -16,6 +16,7 @@ class Link
 end
 
 class LinkedList
+  attr_reader :head, :tail 
 
   include Enumerable
 
@@ -68,7 +69,7 @@ class LinkedList
       until current_node == @tail
         if current_node.key == key
           current_node.val = val
-          break 
+          break
         end
         current_node = current_node.next
       end
